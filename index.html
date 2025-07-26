@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social App Case Study</title>
+<style>
+/* === BASE STYLES === */
+section { padding: 2em 15%; }
+h1, h2, h3, h4, p, li { font-family: Futura, sans-serif; margin: 0 0 1em; }
+h1 { font-size: 56px; line-height: 1.2; }
+h2 { font-size: 44px; line-height: 1.2; }
+h3, h4 { font-size: 30px; font-style: italic; background: #fff; color: #3C6EFD; }
+p, li { font-size: 18px; line-height: 1.5; }
+
+/* === LAYOUT === */
+.two-col, .two-one-col { overflow: hidden; margin-bottom: 2em; }
+.two-col .left, .two-one-col .left { float: left; width: 45%; padding-right: 1.5rem; }
+.two-col .right, .two-one-col .right { float: left; width: 45%; padding-left: 1.5rem; }
+.multi { column-count: 2; column-gap: 1.5rem; column-rule: 1px solid #ccc; hyphens: auto; }
+
+/* === COLORS === */
+.cs-intro    { background-color: #aae6c0; color: white; padding-bottom: 5rem; }
+.cs-overview { background-color: #6e6e6e; color: white; }
+.cs-goals    { background-color: #F2F2F2; color: #424B54; }
+.cs-role     { background-color: #c7c7c7; color: #3D2A39; }
+.cs-process  { background-color: #aae6c0; color: #3D2A39; }
+.cs-impact   { background-color: #4AD8CC; color: white; }
+.cs-gallery  { background-color: #D9CCE7; color: #3D2A39; padding: 60px 20px; text-align: center; }
+.cs-conclusion{ background-color: #F2F2F2; color: #424B54; }
+.cs-cta      { background: #424B54; color: #fff; text-align: center; padding: 80px 20px; }
+
+/* === CTA === */
+.cta-container { max-width: 700px; margin: auto; }
+.cs-cta h2    { font-size: 3rem; font-weight: 600; margin-bottom: 25px; }
+.cs-cta p     { font-size: 1.25rem; line-height: 1.8; margin-bottom: 40px; }
+.cta-button   { display: inline-block; background: #3C6EFD; color: #fff; padding: 16px 36px; font-size: 1.1rem; font-weight: 500;
+                border-radius: 6px; text-decoration: none; transition: background-color .3s ease, transform .2s ease; }
+.cta-button:hover { background: #2a4ebd; transform: translateY(-2px); }
+
+/* === GALLERY === */
+.image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
+.thumb img      { width: 100%; border-radius: 8px; cursor: pointer; transition: transform .3s ease; }
+.thumb img:hover{ transform: scale(1.03); }
+.caption        { font-size: .9em; color: #333333; margin-top: .5em; }
+
+/* === ANIMATIONS === */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-left { opacity: 0; transform: translateX(-20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-right { opacity: 0; transform: translateX(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.visible { opacity: 1; transform: translate(0, 0); }
+
+/* Accessibility */
+a:focus, button:focus { outline: 2px dashed #6A4C93; outline-offset: 4px; }
+</style>
+</head>
+<body>
+
+<section class="cs-intro">
+  <div class="two-one-col">
+    <h1 class="left fade-left">Social App (Undisclosed Name)</h1>
+    <img class="right fade-right" src="https://static.wixstatic.com/media/2a58bc_f88cea505c9341c4a0c0336fa55d5672~mv2.png">
+  </div>
+  <h3 class="fade-left">Designing a social app for meaningful connections</h3>
+  <div class="multi fade-right">
+    <p>Mingling was a startup project focused on creating deeper, more intentional connections in the digital space. In 2021, I joined the design team as a UX/UI designer, helping shape the app’s identity, flows, and interface system. My work spanned research, concepting, and building a design library that could scale with future features.</p>
+  </div>
+</section>
+
+<section class="cs-overview fade-in" style="transition-delay:0.5s;">
+  <h2 class="fade-left">Project Overview</h2>
+  <p class="multi fade-right">The goal of Mingling was to challenge the superficiality of traditional social platforms by fostering genuine connections. The founders needed a user experience that felt fresh yet intuitive, and an interface that balanced playfulness with clarity. I contributed by building visual foundations, creating modular components, and refining flows for mobile and web touchpoints.</p>
+</section>
+
+<section class="cs-goals">
+  <h2 class="fade-left">Goals & Challenges</h2>
+  <ul class="multi fade-right">
+    <li>Design an interface that encourages authentic social interactions</li>
+    <li>Establish a consistent visual system to support evolving features</li>
+    <li>Create UX flows that feel natural for first-time users</li>
+    <li>Balance an innovative aesthetic with accessibility and clarity</li>
+  </ul>
+</section>
+
+<section class="cs-role">
+  <h2 class="fade-left">My Role</h2>
+  <p class="multi fade-right">As a UX/UI designer embedded in a small startup team, I:</p>
+  <ul class="multi fade-right">
+    <li>Designed core screens for the app: onboarding, profile, and matching flows</li>
+    <li>Built a modular UI library in Figma, with components ready for handoff</li>
+    <li>Worked closely with developers to ensure design feasibility</li>
+    <li>Helped craft the visual identity, from iconography to color palette exploration</li>
+  </ul>
+</section>
+
+<section class="cs-process">
+  <h2 class="fade-left">Process Highlights</h2>
+  <div class="steps">
+    <div class="two-col fade-up">
+      <div class="left">
+        <h4 class="fade-left">1. Research & Discovery</h4>
+        <p class="fade-right">We benchmarked other social platforms, interviewed potential users, and mapped pain points in existing digital interactions.</p>
+      </div>
+      <div class="right">
+        <h4 class="fade-left">2. Design System Creation</h4>
+        <p class="fade-right">I developed a component-based design system in Figma, documenting typography, buttons, and layouts to ensure consistency across the app.</p>
+      </div>
+    </div>
+    <div class="two-col fade-up">
+      <div class="left">
+        <h4 class="fade-left">3. UI Design & Iteration</h4>
+        <p class="fade-right">From wireframes to high-fidelity prototypes, I designed and tested screens, iterating based on feedback from users and the startup team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-impact">
+  <div class="two-col">
+    <div class="left fade-left">
+      <h2>Results & Impact</h2>
+      <p>The app’s interface established a strong design foundation for development. Although the startup later pivoted, the system we created became a reusable blueprint for similar projects.</p>
+    </div>
+    <div class="right fade-right">
+      <h2>Key Outcomes:</h2>
+      <ul>
+        <li>Created a scalable design library for the startup’s core product</li>
+        <li>Improved UX clarity and visual coherence across the app</li>
+        <li>Delivered wireframes and high-fidelity prototypes for key flows</li>
+        <li>Set a visual tone that combined freshness, warmth, and usability</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cs-gallery">
+  <h2 class="fade-left">Visual Snapshots</h2>
+  <div class="image-gallery">
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_35c4e13be004471f812ca25f6c7c5de4~mv2.png" alt="Social App - Moodboard"><p class="caption">Initial moodboard exploring visual styles, color palette, and the overall tone of the app.</p></div>
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_9791390565564664bb5c3a300677af21~mv2.png" alt="Social App - Wireframes"><p class="caption">Low-fidelity wireframes mapping out key flows before moving into UI design.</p></div>
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_22090ecfaacc43ad870eaa71c8dfa7a6~mv2.png" alt="Social App - UI Components"><p class="caption">UI library components created in Figma for consistency and scalability.</p></div>
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_f1bc784d9b864fb185f5331c14f42e56~mv2.png" alt="Social App - Prototypes"><p class="caption">High-fidelity prototype screens used for usability testing and handoff.</p></div>
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_a6ff543991c64111abfccbc1b282eb7c~mv2.png" alt="Social App - UI kit"><p class="caption">UI kit created to ensure visual consistency and design scalability.</p></div>
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_bf314f81441447fc89f50c0b7045a1a7~mv2.png" alt="Social App - Final design of the home screen"><p class="caption">Final design of the home screen, emphasizing clarity and accessibility.</p></div>
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_6e9137689fd94b4091e601858fd2e121~mv2.png" alt="Social App - Key app screens"><p class="caption">Key app screens designed with consistency across the visual system.</p></div>
+    <div class="thumb fade-in"><img src="https://static.wixstatic.com/media/2a58bc_912de1642f8c45ecb034b3a907a75d6b~mv2.png" alt="Social App - Prototypes"><p class="caption">Interactive prototype built in Figma for usability testing and early feedback.</p></div>
+  </div>
+</section>
+
+<section class="cs-conclusion">
+  <h2 class="fade-left">Conclusions</h2>
+  <p class="multi fade-right">Mingling represents my ability to work on early-stage products, translating a concept into a tangible design system. It’s a project that combined creativity, research, and collaboration—essential elements in any digital design challenge.</p>
+</section>
+
+<section class="cs-cta fade-up">
+  <div class="cta-container">
+    <h2 class="fade-left">Let’s build the next big thing</h2>
+    <p class="fade-right">Looking for a designer who can bridge research, design systems, and interface craft? I’d love to collaborate on your next project.</p>
+    <a href="mailto:rocio@rociofatas.info" class="cta-button fade-in">Get in touch</a>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const faders = document.querySelectorAll('.fade-in, .fade-left, .fade-right, .fade-up');
+
+  const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  faders.forEach((fader, index) => {
+    // retraso en cascada pero corto (0.03s entre elementos)
+    fader.style.transitionDelay = `${Math.min(index * 0.03, 0.15)}s`;
+    appearOnScroll.observe(fader);
+  });
+});
+</script>
+
+</body>
+</html>
