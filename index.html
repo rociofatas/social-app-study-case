@@ -193,9 +193,10 @@ a:focus, button:focus { outline: 2px dashed #6A4C93; outline-offset: 4px; }
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  /* === ANIMACIONES DE SCROLL === */
   const faders = document.querySelectorAll('.fade-in, .fade-left, .fade-right, .fade-up');
 
-  const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
@@ -209,31 +210,24 @@ document.addEventListener("DOMContentLoaded", function () {
     fader.style.transitionDelay = `${Math.min(index * 0.03, 0.15)}s`;
     appearOnScroll.observe(fader);
   });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  // === ANIMACIONES DE SCROLL (se mantiene igual) ===
-  const faders = document.querySelectorAll('.fade-in, .fade-left, .fade-right, .fade-up');
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
 
-  faders.forEach((fader, index) => {
-    fader.style.transitionDelay = `${Math.min(index * 0.03, 0.15)}s`;
-    appearOnScroll.observe(fader);
-  });
+  /* === LIGHTBOX via postMessage (con galería completa) === */
 
-  // === LIGHTBOX via postMessage (NUEVO) ===
-  document.querySelectorAll('.image-gallery img').forEach(img => {
+  // 1️⃣ Recogemos TODAS las imágenes, incluidas las sueltas con clase .thumb
+  const allImages = Array.from(document.querySelectorAll('.image-gallery img, .thumb img')).map(img => ({
+    src: img.src,
+    caption: img.nextElementSibling ? img.nextElementSibling.innerText : ""
+  }));
+
+  // 2️⃣ Cada imagen manda la galería entera + índice de la imagen clicada
+  document.querySelectorAll('.image-gallery img, .thumb img').forEach((img, index) => {
     img.addEventListener('click', () => {
       window.parent.postMessage(
-        { type: 'openLightbox', imageSrc: img.src },
+        {
+          type: 'openLightbox',
+          items: allImages,
+          startIndex: index
+        },
         '*'
       );
     });
