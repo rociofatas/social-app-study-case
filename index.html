@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // === ANIMACIONES SCROLL ===
+  // === ANIMACIONES DE SCROLL (se mantiene igual) ===
   const faders = document.querySelectorAll('.fade-in, .fade-left, .fade-right, .fade-up');
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -229,26 +229,18 @@ document.addEventListener("DOMContentLoaded", function () {
     appearOnScroll.observe(fader);
   });
 
-  // === LIGHTBOX ===
-  const overlay = document.getElementById('lightbox-overlay');
-  const overlayImg = document.getElementById('lightbox-img');
-  const closeBtn = document.getElementById('lightbox-close');
-
-  // Selecciona TODAS las imágenes de tu case study
+  // === LIGHTBOX via postMessage (NUEVO) ===
   document.querySelectorAll('.image-gallery img').forEach(img => {
     img.addEventListener('click', () => {
-      overlay.style.display = 'flex';
-      overlayImg.src = img.src;
+      window.parent.postMessage(
+        { type: 'openLightbox', imageSrc: img.src },
+        '*'
+      );
     });
-  });
-
-  // Cierra el lightbox al hacer clic en la X o fuera de la imagen
-  closeBtn.addEventListener('click', () => overlay.style.display = 'none');
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) overlay.style.display = 'none';
   });
 });
 </script>
+
 
 
 <div id="lightbox-overlay">
