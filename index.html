@@ -83,6 +83,66 @@ p, li { font-size: 18px; line-height: 1.5; }
 
 /* Accessibility */
 a:focus, button:focus { outline: 2px dashed #6A4C93; outline-offset: 4px; }
+
+/* === 📱 RESPONSIVE MEDIA QUERIES === */
+
+/* 🔵 Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  section { padding: 2em 8%; }
+  h1 { font-size: 42px; }
+  h2 { font-size: 34px; }
+  h3, h4 { font-size: 24px; }
+
+  .two-col .left, .two-one-col .left,
+  .two-col .right, .two-one-col .right {
+    width: 48%;  /* que sigan siendo dos columnas, pero un poco más anchas */
+    padding: 0 1rem;
+  }
+  .multi { column-count: 1; } /* 👈 deja solo una columna en tablet */
+}
+
+/* 🟢 Móviles */
+@media (max-width: 768px) {
+  section { padding: 1.5em 5%; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 26px; }
+  h3, h4 { font-size: 20px; }
+  p, li { font-size: 16px; }
+
+  /* 💥 Floats a diseño vertical */
+  .two-col .left, .two-col .right,
+  .two-one-col .left, .two-one-col .right {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1.5em;
+  }
+
+  /* 👇 Columnas múltiples a una sola */
+  .multi { 
+    column-count: 1; 
+    column-gap: 0;
+    column-rule: none;
+  }
+
+  /* 🖼️ Galería en columna */
+  .image-gallery {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+
+  /* ✍️ CTA más cómodo en móvil */
+  .cs-cta h2 { font-size: 24px; }
+  .cs-cta p { font-size: 16px; }
+  .cta-button { 
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
 </style>
 </head>
 <body>
